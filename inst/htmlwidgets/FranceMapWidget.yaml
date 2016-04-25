@@ -1,0 +1,11 @@
+# (uncomment to add a dependency)
+  dependencies:
+   - name: FranceMapWidget
+     version: 1.0.1
+     src: htmlwidgets/lib/FranceMapWidget-1.0.1
+     script:
+     - jquery.vmap.js
+     - jquery.vmap.france.js
+     - jquery.vmap.colorsFrance.js
+     - json-to-table.js
+     stylesheet: jqvmap.css
