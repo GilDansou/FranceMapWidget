@@ -15,8 +15,6 @@ FranceMapWidget <- function(width = NULL, height = NULL,data,region,session,inpu
                       value = region
       )
     }else{
-      print(region)
-      print(laginput)
       if (region != laginput){
         updateTextInput(session, "FranceMapformcontrol1234567",
                         value = region
@@ -26,6 +24,7 @@ FranceMapWidget <- function(width = NULL, height = NULL,data,region,session,inpu
         shinyjs::runjs(code)
         id = FranceDep[FranceDep[,1]==region,2]
         code = paste("$('",id,"').attr('fill','#EC0000');",sep="")
+        print(code)
         shinyjs::runjs(code)
       }else{
         updateTextInput(session, "regio",
@@ -36,7 +35,6 @@ FranceMapWidget <- function(width = NULL, height = NULL,data,region,session,inpu
   }
 
   table = data[data[,1]==input$FranceMapformcontrol1234567,2:3]
-  print(table)
   assign("laginput",region,envir = globalenv())
   # forward options using  x
   x = list(
@@ -59,7 +57,7 @@ FranceMapWidget <- function(width = NULL, height = NULL,data,region,session,inpu
 #'
 #' @export
 FranceMapWidgetOutput <- function(outputId, width = '100%', height = '0px',Width="700px",Height="600px"){
-    shinyWidgetOutput(outputId, 'FranceMapWidget', width, height, package = 'FranceMapWidget')
+      shinyWidgetOutput(outputId, 'FranceMapWidget', width, height, package = 'FranceMapWidget')
 }
 
 #' Widget render function for use in Shiny
@@ -78,4 +76,5 @@ FranceMapStart <- function() {
   )
   inputTag
 }
+
 

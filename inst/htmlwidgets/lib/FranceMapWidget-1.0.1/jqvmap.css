@@ -57,11 +57,9 @@
 .infos{
   width:400px;
   height: 500px;
-  top: 60px;
-  position: absolute;
-  left: 700px;
-  margin-left : 185px;
-  margin-top: 80px;
+  position: relative;
+  top: -60px;
+  display : inline-block;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 

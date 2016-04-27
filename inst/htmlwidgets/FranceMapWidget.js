@@ -6,8 +6,10 @@ HTMLWidgets.widget({
 
   initialize: function(el, width, height) {
 
+    $(".container").append("<div id='francemap123' style = 'width: 700px; height: 600px;display:inline-block'></div>");
     return {
       // TODO: add instance fields as required
+
     }
 
   },
@@ -18,6 +20,7 @@ HTMLWidgets.widget({
 
     $( ".infos" ).remove();
     $( ".jqvmap-label" ).remove();
+
 
     var infoBox = $("<div></div>");
     infoBox.addClass("infos");
@@ -37,7 +40,7 @@ HTMLWidgets.widget({
     $( ".infoBody" ).empty();
     $('.infoBody').append(ConvertJsonToTable(x.table, 'Franceinfos', null, 'Download'));
 
-		$('#francemap').vectorMap({
+		$('#francemap123').vectorMap({
 		  map: 'france_fr',
 			hoverOpacity: 0.5,
 			hoverColor: false,
